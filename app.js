@@ -174,14 +174,14 @@ app.get('/movies', (req, res) => {
         db.all("SELECT GenresID, GenreName FROM Genres", (errGenres, genres) => {
             if (errGenres) {
                 console.error(errGenres.message);
-                res.status(500).send("Internal Server Error");
+                res.status(500).send("Internal Server Error Genres");
                 return;
             }
 
             db.all("SELECT * FROM Movies", (errMovies, movies) => {
                 if (errMovies) {
                     console.error(errMovies.message);
-                    res.status(500).send("Internal Server Error");
+                    res.status(500).send("Internal Server Error Movies");
                     return;
                 }
 
